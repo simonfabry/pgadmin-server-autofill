@@ -22,6 +22,7 @@ WORKDIR /root/
 
 # Copy binary from builder
 COPY --from=builder /app/main .
+ADD servers.tpl servers.tpl
 
 # Expose port (adjust if needed)
 # EXPOSE 8080

@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"strings"
 	"text/template"
@@ -25,7 +26,12 @@ func main() {
 		panic(err)
 	}
 
-	out, err := os.Create("servers.json")
+	err = os.MkdirAll("/output", 0o755)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	out, err := os.Create("/output/servers.json")
 	if err != nil {
 		panic(err)
 	}

@@ -2,10 +2,10 @@
     "Servers": {
         "1": {
             "Name": "Minimally Defined Server",
-            "Group": "Server Group 1",
-            "Port": 5432,
+            "Group": "Default",
+            "Port": {{ .PG_PORT }},
             "Username": "postgres",
-            "Host": "localhost",
+            "Host": "{{ .PG_HOST }}",
             "SSLMode": "prefer",
             "MaintenanceDB": "postgres"
         }
